@@ -20,6 +20,12 @@ namespace WeatherTest.DataContext.DI
 
             services.AddDbContext<WeatherTestDbContext>();
 
+            /*
+             https://entityframework-extensions.net/context-factory
+             The context factory is required to provide a working context to the EFE library. 
+             For example, this context will be used to retrieve some information by attaching/detaching entities without impacting the current context.
+             If your context has a default constructor (no parameter), specifying a context factory may be optional unless your context requires some special configuration.
+             */
             EntityFrameworkManager.ContextFactory = context =>
             {
                 var optionsBuilder = new DbContextOptionsBuilder<WeatherTestDbContext>();
