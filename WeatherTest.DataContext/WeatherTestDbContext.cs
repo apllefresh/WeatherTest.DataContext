@@ -23,12 +23,12 @@ namespace WeatherTest.DataContext
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
                 entity.Property(e => e.Url).IsRequired();
-                entity
-                    .HasIndex(e => e.Name)
-                    .IsUnique();
-                entity
-                    .HasIndex(e => e.Url)
-                    .IsUnique();
+                //entity
+                //    .HasIndex(e => e.Name)
+                //    .IsUnique();
+                //entity
+                //    .HasIndex(e => e.Url)
+                //    .IsUnique();
             });
 
             modelBuilder.Entity<Temperature>(entity =>
@@ -38,12 +38,12 @@ namespace WeatherTest.DataContext
                 entity.Property(e => e.Degree).IsRequired();
                 entity.Property(e => e.CityId).IsRequired();
 
-                entity.HasIndex(e => new
-                {
-                    e.CityId,
-                    e.DateTime
-                })
-                   .IsUnique();
+                //entity.HasIndex(e => new
+                //{
+                //    e.CityId,
+                //    e.DateTime
+                //})
+                //   .IsUnique();
 
                 entity.HasOne(d => d.City)
                     .WithMany(p => p.Temperatures);
