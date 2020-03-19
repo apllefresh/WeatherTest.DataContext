@@ -9,14 +9,14 @@ using WeatherTest.DataContext;
 namespace WeatherTest.DataContext.Migrations
 {
     [DbContext(typeof(WeatherTestDbContext))]
-    [Migration("20200318024348_Initial")]
-    partial class Initial
+    [Migration("20200319150437_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("WeatherTest.DataContext.Entities.City", b =>
